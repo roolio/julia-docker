@@ -5,7 +5,9 @@
 FROM ubuntu:quantal
 
 MAINTAINER Julien Laugel jlaugel@gmail.com
-RUN apt-get -y install python-software-properties
+#RUN apt-get -y install python-software-properties
+RUN apt-get update
+RUN sudo apt-get install -y software-properties-common python-software-properties
 RUN echo "deb http://archive.ubuntu.com/ubuntu quantal main universe" > /etc/apt/sources.list
 RUN add-apt-repository ppa:staticfloat/julianightlies
 RUN add-apt-repository ppa:staticfloat/julia-deps
